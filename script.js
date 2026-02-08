@@ -729,9 +729,15 @@ if (contactForm) {
           Accept: "application/json"
         }
       });
+      const payload = await response.json().catch(() => null);
 
       if (!response.ok) {
-        throw new Error(`submission_failed_${response.status}`);
+        throw new Error(payload?.message || `submission_failed_${response.status}`);
+      }
+
+      const isSuccess = payload?.success === true || payload?.success === "true";
+      if (!isSuccess) {
+        throw new Error(payload?.message || "formsubmit_rejected");
       }
 
       contactForm.reset();
@@ -746,8 +752,10 @@ if (contactForm) {
         window.location.href = buildThankYouUrl(currentLang);
       }, 220);
     } catch (error) {
+      const reason = typeof error?.message === "string" ? error.message.trim() : "";
+      const statusText = reason ? `${t("contactStatusError")} ${reason}` : t("contactStatusError");
       if (formStatus) {
-        formStatus.textContent = t("contactStatusError");
+        formStatus.textContent = statusText;
         formStatus.dataset.state = "error";
       }
     } finally {
