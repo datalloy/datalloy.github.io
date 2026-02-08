@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap"
       rel="stylesheet"
     />
   </head>
@@ -26,9 +26,11 @@
           <span class="logo-text" data-i18n="brandName">Datalloy.ai</span>
         </div>
         <nav class="nav-links">
-          <a href="#solution" data-i18n="navSolution">Solution</a>
-          <a href="#capabilities" data-i18n="navCapabilities">Capabilities</a>
+          <a href="#platform" data-i18n="navSolution">Platform</a>
           <a href="#industries" data-i18n="navIndustries">Industries</a>
+          <a href="#use-cases" data-i18n="navUseCases">Use Cases</a>
+          <a href="#models" data-i18n="navCapabilities">Workflow</a>
+          <a href="#validation" data-i18n="navValidation">Comparison</a>
           <a href="#team" data-i18n="navTeam">Team</a>
           <a href="#contact" class="cta" data-i18n="navCta">Request Demo</a>
         </nav>
@@ -37,29 +39,27 @@
           <button class="lang-btn active" data-lang="zh">中文</button>
         </div>
       </header>
+      <a class="floating-demo" href="#contact" data-i18n="floatingDemo">Demo</a>
 
       <main>
         <section class="hero">
           <div class="hero-content">
-            <p class="eyebrow" data-i18n="eyebrow">AI-Native Synthetic Data Platform</p>
-            <h1 data-i18n="heroTitle">
-              Generate production-ready raw data on demand.
+            <p class="eyebrow" data-i18n="eyebrow">AI驱动的高保真合成数据平台</p>
+            <h1 data-i18n-html="heroTitleHtml">
+              按需<span class="brand-accent">生成</span>开箱即用的生产级<span class="brand-accent">数据</span>
             </h1>
             <p class="subhead" data-i18n="heroSubtitle">
-              Datalloy.ai uses Generative AI technologies to synthesize high-fidelity, protocol-compliant raw operational data for training, testing, and
-              compliance. We do not just mimic summary statistics; we generate complete raw records directly usable by standard
-              tools.
+              数据合金（Datalloy.ai）使用生成式AI技术合成高保真、协议合规的原始运营数据，用于训练、测试与合规验证。我们不只拟合统计特征，而是输出可被标准工具直接使用的完整原始记录。
             </p>
-            <p class="target-line" data-i18n="heroTarget">Built for ML, data, and security teams in regulated industries.</p>
+            <p class="target-line" data-i18n="heroTarget">面向高合规行业的机器学习、数据与安全团队。</p>
             <div class="hero-actions">
               <a class="primary" href="#contact" data-i18n="heroPrimary">Get a private pilot</a>
-              <a class="secondary" href="#solution" data-i18n="heroSecondary">See how it works</a>
+              <a class="secondary" href="#models" data-i18n="heroSecondary">See workflow</a>
             </div>
             <div class="hero-proof">
               <img src="datalloy-icon.png" alt="" aria-hidden="true" class="brand-icon brand-icon-xs" />
               <span data-i18n="heroProof">
-                Core results appear at top venues including USENIX Security, NSDI, and SIGMETRICS, with additional publications
-                at NDSS, CoNEXT, and UbiComp.
+                核心成果发表于USENIX Security、NSDI、SIGMETRICS、NDSS、CoNEXT、UbiComp等顶级学术会议，持续聚焦网络数据分析、安全隐私、机器学习系统。
               </span>
             </div>
           </div>
@@ -67,35 +67,34 @@
             <div class="panel-card">
               <h3 data-i18n="panelTitle">Datalloy Core Engine</h3>
               <p data-i18n="panelBody">
-                Generate tabular data, time-series, system logs, and network traffic as complete raw datasets with controllable
-                attributes and rare-case steering.
+                Generate tabular data, time-series, system logs, and network traffic as complete raw datasets with deterministic
+                controls and rare-event generation.
               </p>
               <div class="panel-metrics">
                 <div>
-                  <span class="metric" data-i18n="panelMetricValue1">Raw-data native</span>
+                  <span class="metric" data-i18n="panelMetricValue1">Protocol-true</span>
                   <span data-i18n="panelMetric1">Tool-ready outputs</span>
                 </div>
                 <div>
-                  <span class="metric" data-i18n="panelMetricValue2">Attribute-controlled</span>
-                  <span data-i18n="panelMetric2">Field-level scenario control</span>
+                  <span class="metric" data-i18n="panelMetricValue2">Deterministic</span>
+                  <span data-i18n="panelMetric2">Seed + version pinning</span>
                 </div>
                 <div>
-                  <span class="metric" data-i18n="panelMetricValue3">Rare-case rich</span>
-                  <span data-i18n="panelMetric3">Statistical edge coverage</span>
+                  <span class="metric" data-i18n="panelMetricValue3">Rare-event ready</span>
+                  <span data-i18n="panelMetric3">Scenario-level control</span>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="solution" class="split">
-          <div>
-            <h2 data-i18n="solutionTitle">Win the data bottleneck. Launch models with confidence.</h2>
-            <p data-i18n="solutionBody">
-              Your teams cannot wait months for scarce or regulated datasets. Datalloy.ai generates protocol-compliant full raw
-              data, not feature-only statistics, so you can validate, harden, and ship faster.
+        <section id="solution" class="split solution-split">
+          <div class="solution-left">
+            <h2 data-i18n="solutionTitle">打破数据瓶颈，加速模型落地。</h2>
+            <p class="solution-body" data-i18n="solutionBody">
+              关键行业的数据往往最稀缺、最敏感。数据合金按需生成协议合规的完整原始数据，而非只合成统计特征，让验证、加固与上线速度领先竞争对手。
             </p>
-            <ul class="value-list">
+            <ul class="value-list solution-value-list">
               <li>
                 <span class="icon-wrap" aria-hidden="true">
                   <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -103,7 +102,7 @@
                     <circle cx="18" cy="17" r="3" fill="none" stroke="currentColor" stroke-width="1.8" />
                   </svg>
                 </span>
-                <span data-i18n="value1">Generate complete raw datasets across tabular, time-series, logs, and traffic.</span>
+                <span data-i18n="value1">覆盖表格、时序、系统日志、网络流量的完整原始数据。</span>
               </li>
               <li>
                 <span class="icon-wrap" aria-hidden="true">
@@ -117,7 +116,7 @@
                     <path d="M9.5 12.5l2 2 3.5-4" fill="none" stroke="currentColor" stroke-width="1.8" />
                   </svg>
                 </span>
-                <span data-i18n="value2">Privacy-safe by design. NDA-ready, audit-friendly.</span>
+                <span data-i18n="value2">协议合规输出，可直接接入IDS、SIEM、ETL与ML工具链。</span>
               </li>
               <li>
                 <span class="icon-wrap" aria-hidden="true">
@@ -126,142 +125,142 @@
                     <path d="M4 19h16" fill="none" stroke="currentColor" stroke-width="1.8" />
                   </svg>
                 </span>
-                <span data-i18n="value3">Unlock long-tail scenarios at industrial scale.</span>
+                <span data-i18n="value3">按需控制属性，批量生成统计稀有的边缘案例。</span>
               </li>
             </ul>
           </div>
-          <div class="pillars">
-            <div class="pillar">
+          <div class="pillars solution-pillars">
+            <div class="pillar solution-pillar">
               <div class="pillar-icon">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M5 7h14v10H5z" fill="none" stroke="currentColor" stroke-width="1.8" />
                   <path d="M8 10h8M8 14h5" fill="none" stroke="currentColor" stroke-width="1.8" />
                 </svg>
               </div>
-              <h4 data-i18n="pillar1Title">Break data silos</h4>
-              <p data-i18n="pillar1Body">Share model-ready data across teams without exposing sensitive records.</p>
+              <h4 data-i18n="pillar1Title">打破数据孤岛</h4>
+              <p data-i18n="pillar1Body">在不泄露敏感信息的情况下实现跨团队协作训练。</p>
             </div>
-            <div class="pillar">
+            <div class="pillar solution-pillar">
               <div class="pillar-icon">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 4v16M4 12h16" fill="none" stroke="currentColor" stroke-width="1.8" />
                   <circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="1.8" />
                 </svg>
               </div>
-              <h4 data-i18n="pillar2Title">Unlock rare events</h4>
-              <p data-i18n="pillar2Body">Generate corner cases on demand to harden mission-critical AI.</p>
+              <h4 data-i18n="pillar2Title">生成稀有事件</h4>
+              <p data-i18n="pillar2Body">按需生成边缘案例，提升关键模型的鲁棒性。</p>
             </div>
-            <div class="pillar">
+            <div class="pillar solution-pillar">
               <div class="pillar-icon">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M6 7h12v10H6z" fill="none" stroke="currentColor" stroke-width="1.8" />
                   <path d="M9 7V5h6v2" fill="none" stroke="currentColor" stroke-width="1.8" />
                 </svg>
               </div>
-              <h4 data-i18n="pillar3Title">Cut storage costs</h4>
-              <p data-i18n="pillar3Body">Store lightweight generative models, replay any historical scenario instantly.</p>
+              <h4 data-i18n="pillar3Title">降低数据成本</h4>
+              <p data-i18n="pillar3Body">存储轻量模型，随时回放历史场景。</p>
             </div>
           </div>
         </section>
 
-        <section id="capabilities" class="grid">
+        <section id="platform" class="validation">
           <div class="section-head">
-            <h2 data-i18n="capabilitiesTitle">Generate the data your revenue depends on.</h2>
-            <p data-i18n="capabilitiesBody">Full-fidelity data that plugs into existing analytics stacks.</p>
+            <h2 data-i18n="validationTitle">One platform for multimodal operational data</h2>
+            <p data-i18n="validationBody">
+              Generate protocol-compliant raw outputs across PCAP, logs, time-series, and tabular from one workflow.
+            </p>
           </div>
-          <div class="grid-cards">
-            <article>
-              <div class="card-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M4 7h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.8" />
-                  <path d="M7 10h6M7 14h10" fill="none" stroke="currentColor" stroke-width="1.8" />
-                </svg>
-              </div>
-              <h3 data-i18n="cap1Title">Protocol-compliant PCAP</h3>
-              <p data-i18n="cap1Body">Synthetic network packets ready for IDS, SIEM, and traffic analyzers.</p>
-            </article>
-            <article>
-              <div class="card-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M5 16l4-4 4 4 4-4 2 2" fill="none" stroke="currentColor" stroke-width="1.8" />
-                  <circle cx="5" cy="16" r="2" fill="none" stroke="currentColor" stroke-width="1.8" />
-                </svg>
-              </div>
-              <h3 data-i18n="cap2Title">Multimodal time-series</h3>
-              <p data-i18n="cap2Body">Correlated sensor, CAN bus, and telemetry sequences with long-range dependencies.</p>
-            </article>
-            <article>
-              <div class="card-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M6 5h12v14H6z" fill="none" stroke="currentColor" stroke-width="1.8" />
-                  <path d="M9 9h6M9 13h6" fill="none" stroke="currentColor" stroke-width="1.8" />
-                </svg>
-              </div>
-              <h3 data-i18n="cap3Title">System logs & traces</h3>
-              <p data-i18n="cap3Body">Structured logs for anomaly detection and root-cause analysis pipelines.</p>
-            </article>
-            <article>
-              <div class="card-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.8" />
-                  <path d="M8 6v12M12 6v12M16 6v12" fill="none" stroke="currentColor" stroke-width="1.8" />
-                </svg>
-              </div>
-              <h3 data-i18n="cap4Title">Tabular at scale</h3>
-              <p data-i18n="cap4Body">High-coverage tabular data for risk, compliance, and forecasting models.</p>
-            </article>
+          <div class="validation-grid">
+            <details class="validation-card validation-item">
+              <summary>
+                <div class="validation-summary-main">
+                  <h3 data-i18n="validationCard1Title">Network traffic (PCAP)</h3>
+                  <span class="validation-metric" data-i18n="validationCard1Metric"
+                    >Outputs: PCAP, tool-ready for Wireshark/Scapy/TCPReplay</span
+                  >
+                </div>
+                <span class="validation-trigger" aria-hidden="true"></span>
+              </summary>
+              <p class="validation-detail" data-i18n="validationCard1Body">
+                Packet-level generation with protocol-aware structure and post-generation verification.
+              </p>
+            </details>
+            <details class="validation-card validation-item">
+              <summary>
+                <div class="validation-summary-main">
+                  <h3 data-i18n="validationCard2Title">System logs and traces</h3>
+                  <span class="validation-metric" data-i18n="validationCard2Metric"
+                    >Outputs: JSONL / Syslog-style records with validation reports</span
+                  >
+                </div>
+                <span class="validation-trigger" aria-hidden="true"></span>
+              </summary>
+              <p class="validation-detail" data-i18n="validationCard2Body">
+                Structured and semi-structured operational logs with schema constraints and event-order controls.
+              </p>
+            </details>
+            <details class="validation-card validation-item">
+              <summary>
+                <div class="validation-summary-main">
+                  <h3 data-i18n="validationCard3Title">Time-series telemetry</h3>
+                  <span class="validation-metric" data-i18n="validationCard3Metric"
+                    >Outputs: CSV / Parquet for monitoring and ML pipelines</span
+                  >
+                </div>
+                <span class="validation-trigger" aria-hidden="true"></span>
+              </summary>
+              <p class="validation-detail" data-i18n="validationCard3Body">
+                Multi-sensor and multi-flow sequence synthesis with long-range dependency controls.
+              </p>
+            </details>
+            <details class="validation-card validation-item">
+              <summary>
+                <div class="validation-summary-main">
+                  <h3 data-i18n="validationCard4Title">Tabular records</h3>
+                  <span class="validation-metric" data-i18n="validationCard4Metric"
+                    >Outputs: schema-constrained tables with field-level steering</span
+                  >
+                </div>
+                <span class="validation-trigger" aria-hidden="true"></span>
+              </summary>
+              <p class="validation-detail" data-i18n="validationCard4Body">
+                High-coverage synthetic records for risk analytics, forecasting, and compliance workflows.
+              </p>
+            </details>
           </div>
-        </section>
-
-        <section id="deployment" class="deployment">
-          <div class="section-head">
-            <h2 data-i18n="deploymentTitle">Deploy fast, stay compliant.</h2>
-            <p data-i18n="deploymentBody">Choose SaaS, VPC, or on-prem. Keep data behind your firewall.</p>
-          </div>
-          <div class="deployment-grid">
-            <article>
-              <div class="card-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M5 7h14v10H5z" fill="none" stroke="currentColor" stroke-width="1.8" />
-                  <path d="M8 10h8M8 14h5" fill="none" stroke="currentColor" stroke-width="1.8" />
-                </svg>
-              </div>
-              <h3 data-i18n="deploy1Title">Flexible deployment</h3>
-              <p data-i18n="deploy1Body">SaaS, VPC, or on-prem with isolated pipelines.</p>
-            </article>
-            <article>
-              <div class="card-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 6v6l4 2" fill="none" stroke="currentColor" stroke-width="1.8" />
-                  <circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="1.8" />
-                </svg>
-              </div>
-              <h3 data-i18n="deploy2Title">Rapid onboarding</h3>
-              <p data-i18n="deploy2Body">Map protocols and deliver a pilot in weeks, not quarters.</p>
-            </article>
-            <article>
-              <div class="card-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M4 7h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.8" />
-                  <path d="M7 10h4M7 14h10" fill="none" stroke="currentColor" stroke-width="1.8" />
-                  <path d="M13 10l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" />
-                </svg>
-              </div>
-              <h3 data-i18n="deploy3Title">Seamless integration</h3>
-              <p data-i18n="deploy3Body">Outputs in PCAP, CSV, Parquet; plug into IDS, SIEM, ML stacks.</p>
-            </article>
-          </div>
+          <p class="validation-note" data-i18n="validationNote">
+            Core generation stack uses diffusion and SSM families, plus task-specific adaptation and validation layers.
+          </p>
         </section>
 
         <section id="industries" class="highlight">
           <div class="section-head">
-            <h2 data-i18n="industriesTitle">Built for regulated, revenue-critical industries</h2>
-            <p data-i18n="industriesBody">Where real-world data is scarce, sensitive, or too risky to capture.</p>
+            <h2 data-i18n="industriesTitle">面向高合规、营收关键行业</h2>
+            <p data-i18n="industriesBody">
+              真实数据稀缺、敏感或获取成本极高的场景。
+            </p>
           </div>
           <div class="industry-frame">
             <div class="industry-axis axis-y" data-i18n="industryAxisY">Operational risk</div>
             <div class="industry-axis axis-x" data-i18n="industryAxisX">Data sensitivity</div>
             <div class="industry-list quadrants">
+              <div class="industry-card">
+                <div class="list-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M7 16h10a4 4 0 000-8 5 5 0 00-9.7 1.6A3.5 3.5 0 007 16z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                    />
+                    <path d="M9 16v3M15 16v3" fill="none" stroke="currentColor" stroke-width="1.8" />
+                    <path d="M10 12l2 2 3-3" fill="none" stroke="currentColor" stroke-width="1.8" />
+                  </svg>
+                </div>
+                <h4 data-i18n="industry1Title">Cybersecurity and SOC</h4>
+                <p data-i18n="industry1Body">Protocol-true PCAP and logs for detection engineering, threat replay, and QA.</p>
+                <p class="scenario" data-i18n="industry1Scenario">Scenario: Lateral movement replay with controlled rarity.</p>
+              </div>
               <div class="industry-card">
                 <div class="list-icon">
                   <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -277,26 +276,9 @@
                     <circle cx="16" cy="16" r="2" fill="none" stroke="currentColor" stroke-width="1.8" />
                   </svg>
                 </div>
-                <h4 data-i18n="industry1Title">Autonomous & connected vehicles</h4>
-                <p data-i18n="industry1Body">Simulate extreme driving conditions and sensor failures safely.</p>
-                <p class="scenario" data-i18n="industry1Scenario">Scenario: Rainy-night sensor dropout.</p>
-              </div>
-              <div class="industry-card">
-                <div class="list-icon">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M7 16h10a4 4 0 000-8 5 5 0 00-9.7 1.6A3.5 3.5 0 007 16z"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.8"
-                    />
-                    <path d="M9 16v3M15 16v3" fill="none" stroke="currentColor" stroke-width="1.8" />
-                    <path d="M10 12l2 2 3-3" fill="none" stroke="currentColor" stroke-width="1.8" />
-                  </svg>
-                </div>
-                <h4 data-i18n="industry2Title">Cybersecurity & cloud</h4>
-                <p data-i18n="industry2Body">Train detectors on realistic attack traffic without exposing users.</p>
-                <p class="scenario" data-i18n="industry2Scenario">Scenario: Lateral movement attack replay.</p>
+                <h4 data-i18n="industry2Title">Vehicle telemetry and ADAS</h4>
+                <p data-i18n="industry2Body">Rare-event generation for fault injection, safety regression, and edge-condition replay.</p>
+                <p class="scenario" data-i18n="industry2Scenario">Scenario: Rainy-night sensor dropout with correlated CAN events.</p>
               </div>
               <div class="industry-card">
                 <div class="list-icon">
@@ -307,7 +289,7 @@
                     <path d="M14 18V9l4-2v11" fill="none" stroke="currentColor" stroke-width="1.8" />
                   </svg>
                 </div>
-                <h4 data-i18n="industry3Title">IoT & smart manufacturing</h4>
+                <h4 data-i18n="industry3Title">IoT and smart manufacturing</h4>
                 <p data-i18n="industry3Body">Model equipment degradation and rare failures before they occur.</p>
                 <p class="scenario" data-i18n="industry3Scenario">Scenario: Motor overheating before failure.</p>
               </div>
@@ -320,19 +302,230 @@
                     <path d="M8 7h8" fill="none" stroke="currentColor" stroke-width="1.8" />
                   </svg>
                 </div>
-                <h4 data-i18n="industry4Title">Finance & compliance</h4>
-                <p data-i18n="industry4Body">Generate risk scenarios while preserving data privacy.</p>
-                <p class="scenario" data-i18n="industry4Scenario">Scenario: Portfolio stress-test shock.</p>
+                <h4 data-i18n="industry4Title">云服务商</h4>
+                <p data-i18n="industry4Body">在租户隐私保护前提下生成高韧性运维场景。</p>
+                <p class="scenario" data-i18n="industry4Scenario">场景：多租户流量突增与控制平面异常回放。</p>
               </div>
             </div>
           </div>
         </section>
 
-        <section class="comparison">
+        <section id="use-cases" class="use-cases">
           <div class="section-head">
-            <h2 data-i18n="comparisonTitle">Compare your options</h2>
+            <h2 data-i18n="capabilitiesTitle">用例</h2>
+            <p data-i18n="capabilitiesBody">每个用例对应业务目标、落地场景、可交付数据模式与可量化结果，点击展开查看。</p>
+          </div>
+          <div class="use-case-list">
+            <details class="use-case-item" open>
+              <summary>
+                <span class="use-case-number">01</span>
+                <h3 data-i18n="case1Title">车企场景：稀有事件增强</h3>
+                <span class="use-case-trigger" aria-hidden="true"></span>
+              </summary>
+              <div class="use-case-detail">
+                <div class="use-case-row">
+                  <span class="use-case-label" data-i18n="useCaseGoalLabel">用例目的</span>
+                  <p data-i18n="case1Goal">在真实事故样本稀缺时，快速补齐关键长尾数据，缩短模型上线周期。</p>
+                </div>
+                <div class="use-case-row">
+                  <span class="use-case-label" data-i18n="useCaseScenarioLabel">场景</span>
+                  <p data-i18n="case1Scenario">面向发布前安全回归，例如雨夜传感器失效与控制异常工况。</p>
+                </div>
+                <div class="use-case-row">
+                  <span class="use-case-label" data-i18n="useCaseModeLabel">数据模式</span>
+                  <p data-i18n="case1Mode">车载时序遥测、事件日志与协议级网络流量的组合生成。</p>
+                </div>
+                <div class="use-case-row">
+                  <span class="use-case-label" data-i18n="useCaseMetricLabel">指标变化</span>
+                  <p data-i18n="case1Metric">试点常见结果：关键场景覆盖率提升 20%-35%，回归轮次减少 30%+。</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="use-case-item">
+              <summary>
+                <span class="use-case-number">02</span>
+                <h3 data-i18n="case2Title">网络安全场景：模型自适应</h3>
+                <span class="use-case-trigger" aria-hidden="true"></span>
+              </summary>
+              <div class="use-case-detail">
+                <div class="use-case-row">
+                  <span class="use-case-label" data-i18n="useCaseGoalLabel">用例目的</span>
+                  <p data-i18n="case2Goal">在攻击手法变化时维持检测效果，减少频繁重标注成本。</p>
+                </div>
+                <div class="use-case-row">
+                  <span class="use-case-label" data-i18n="useCaseScenarioLabel">场景</span>
+                  <p data-i18n="case2Scenario">SOC 漂移治理（UGR'16：Train July -> Test August），仅需 1% 标注预算。</p>
+                </div>
+                <div class="use-case-row">
+                  <span class="use-case-label" data-i18n="useCaseModeLabel">数据模式</span>
+                  <p data-i18n="case2Mode">多流网络流量 + 系统日志，结合主动采样和合成增强。</p>
+                </div>
+                <div class="use-case-row">
+                  <span class="use-case-label" data-i18n="useCaseMetricLabel">指标变化</span>
+                  <p data-i18n="case2Metric">试点常见结果：告警质量提升 10%-25%，人工复核工时下降 20%-40%。</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="use-case-item">
+              <summary>
+                <span class="use-case-number">03</span>
+                <h3 data-i18n="case3Title">系统场景：广域测试</h3>
+                <span class="use-case-trigger" aria-hidden="true"></span>
+              </summary>
+              <div class="use-case-detail">
+                <div class="use-case-row">
+                  <span class="use-case-label" data-i18n="useCaseGoalLabel">用例目的</span>
+                  <p data-i18n="case3Goal">加快跨区域联调测试，提前发现协议和规则问题。</p>
+                </div>
+                <div class="use-case-row">
+                  <span class="use-case-label" data-i18n="useCaseScenarioLabel">场景</span>
+                  <p data-i18n="case3Scenario">多站点回放测试、检测规则验收与发布前压测。</p>
+                </div>
+                <div class="use-case-row">
+                  <span class="use-case-label" data-i18n="useCaseModeLabel">数据模式</span>
+                  <p data-i18n="case3Mode">PCAP 原始流生成，附协议字段约束与时序校验。</p>
+                </div>
+                <div class="use-case-row">
+                  <span class="use-case-label" data-i18n="useCaseMetricLabel">指标变化</span>
+                  <p data-i18n="case3Metric">试点常见结果：问题发现前移 1-2 个迭代周期，回放准备时间下降 50%+。</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="use-case-item">
+              <summary>
+                <span class="use-case-number">04</span>
+                <h3 data-i18n="case4Title">云商与服务商场景：数据留存</h3>
+                <span class="use-case-trigger" aria-hidden="true"></span>
+              </summary>
+              <div class="use-case-detail">
+                <div class="use-case-row">
+                  <span class="use-case-label" data-i18n="useCaseGoalLabel">用例目的</span>
+                  <p data-i18n="case4Goal">在保留可回放能力的同时显著降低长期存储成本。</p>
+                </div>
+                <div class="use-case-row">
+                  <span class="use-case-label" data-i18n="useCaseScenarioLabel">场景</span>
+                  <p data-i18n="case4Scenario">高吞吐运维流量的长期归档、审计抽检和按需追溯。</p>
+                </div>
+                <div class="use-case-row">
+                  <span class="use-case-label" data-i18n="useCaseModeLabel">数据模式</span>
+                  <p data-i18n="case4Mode">生成式压缩（模型即数据代理）+ 按需重建。</p>
+                </div>
+                <div class="use-case-row">
+                  <span class="use-case-label" data-i18n="useCaseMetricLabel">指标变化</span>
+                  <p data-i18n="case4Metric">试点常见结果：留存成本下降 40%-80%，审计回放准备时间下降 60%+。</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="use-case-item">
+              <summary>
+                <span class="use-case-number">05</span>
+                <h3 data-i18n="case5Title">跨行业场景：协同与数据分享</h3>
+                <span class="use-case-trigger" aria-hidden="true"></span>
+              </summary>
+              <div class="use-case-detail">
+                <div class="use-case-row">
+                  <span class="use-case-label" data-i18n="useCaseGoalLabel">用例目的</span>
+                  <p data-i18n="case5Goal">在不直接交换敏感原始数据前提下推进联合验证与联合建模。</p>
+                </div>
+                <div class="use-case-row">
+                  <span class="use-case-label" data-i18n="useCaseScenarioLabel">场景</span>
+                  <p data-i18n="case5Scenario">企业多团队与上下游合作方通过可执行场景模板协同。</p>
+                </div>
+                <div class="use-case-row">
+                  <span class="use-case-label" data-i18n="useCaseModeLabel">数据模式</span>
+                  <p data-i18n="case5Mode">共享场景配置、约束策略和模型版本，不共享原始记录。</p>
+                </div>
+                <div class="use-case-row">
+                  <span class="use-case-label" data-i18n="useCaseMetricLabel">指标变化</span>
+                  <p data-i18n="case5Metric">试点常见结果：跨团队数据协作周期缩短 30%-50%，场景复用率显著提升。</p>
+                </div>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section id="models" class="how">
+          <div class="section-head">
+            <h2 data-i18n="howTitle">工作流</h2>
+            <p data-i18n="howBody">
+              模型是可选对象。在第 2 步按任务选择模型家族，然后统一执行约束、验证与部署流程。
+            </p>
+          </div>
+          <div class="how-grid">
+            <div class="flow">
+              <div class="flow-step">
+                <h4 data-i18n="flow1Title">1. 数据定义</h4>
+                <p data-i18n="flow1Body">定义数据模态、模式、规模、时间范围和目标导出格式。</p>
+              </div>
+              <div class="flow-step">
+                <h4 data-i18n="flow2Title">2. 模型选择</h4>
+                <p data-i18n="flow2Body">按任务选择 model_family：diffusion | ssm | adapt | compress。</p>
+              </div>
+              <div class="flow-step">
+                <h4 data-i18n="flow3Title">3. 条件约束</h4>
+                <p data-i18n="flow3Body">配置协议规则、字段约束、相关结构、稀有事件比例与边界条件。</p>
+              </div>
+              <div class="flow-step">
+                <h4 data-i18n="flow4Title">4. 数据验证</h4>
+                <p data-i18n="flow4Body">执行协议、模式、统计与下游任务验证，并生成验证报告。</p>
+              </div>
+              <div class="flow-step">
+                <h4 data-i18n="flow5Title">5. 多方部署</h4>
+                <p data-i18n="flow5Body">按需交付到 SaaS、客户 VPC 或本地部署，并接入 IDS、SIEM、ETL 与 ML 工具链。</p>
+              </div>
+            </div>
+            <div class="api-contract">
+              <h3 data-i18n="apiTitle">可执行工作流接口</h3>
+              <p data-i18n="apiBody">Python 最小可执行示例。</p>
+              <div class="api-terminal">
+                <div class="api-terminal-head">
+                  <span></span><span></span><span></span>
+                  <em>python</em>
+                </div>
+                <div class="api-min">
+                  <code data-i18n="apiCode0">import datalloy  # SDK import</code>
+                  <code data-i18n="apiCode1">spec = datalloy.define(modality="pcap", schema=pcap_schema, volume=1_000_000)  # data definition</code>
+                  <code data-i18n="apiCode2">job = datalloy.generate(spec=spec, model_family="ssm", constraints=policy)  # generation</code>
+                  <code data-i18n="apiCode3">report = datalloy.validate(job.id, checks=["protocol", "schema", "task"])  # validation</code>
+                  <code data-i18n="apiCode4">artifact = datalloy.export(job.id, format="pcap")  # export</code>
+                  <code data-i18n="apiCode5">datalloy.deploy(artifact, target="vpc", tools=["ids", "siem", "ml"])  # deployment</code>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="example-grid">
+            <article class="example-card">
+              <h3 data-i18n="example1Title">PCAP output summary</h3>
+              <pre><code data-i18n="example1Code">flows=12,480 packets=1,248,002 protocols=tcp,dns,tls
+parse_check=pass(99.8%) zeek_conn_rows=188,220</code></pre>
+            </article>
+            <article class="example-card">
+              <h3 data-i18n="example2Title">Log sample</h3>
+              <pre><code data-i18n="example2Code">{"ts":"2026-02-07T03:21:44Z","service":"auth","event":"mfa_fail","user_id":"u_9121"}
+{"ts":"2026-02-07T03:21:47Z","service":"auth","event":"token_refresh","user_id":"u_9121"}</code></pre>
+            </article>
+            <article class="example-card">
+              <h3 data-i18n="example3Title">Time-series segment</h3>
+              <pre><code data-i18n="example3Code">t=00:31 speed=58.1 battery_temp=35.2 torque=122
+t=00:32 speed=57.9 battery_temp=35.4 torque=124</code></pre>
+            </article>
+            <article class="example-card">
+              <h3 data-i18n="example4Title">Tabular schema excerpt</h3>
+              <pre><code data-i18n="example4Code">transaction_id:string  amount:decimal(10,2)
+risk_score:float  alert_label:int  geo_region:string</code></pre>
+            </article>
+          </div>
+        </section>
+
+        <section id="validation" class="comparison">
+          <div class="section-head">
+            <h2 data-i18n="comparisonTitle">方案对比</h2>
             <p data-i18n="comparisonBody">
-              Not just statistical features: generate complete raw data with protocol fidelity and tool compatibility.
+              不止统计特征拟合，而是协议级保真、标准工具可直用的完整原始数据。
             </p>
           </div>
           <div class="comparison-scroll">
@@ -340,122 +533,129 @@
               <div class="comparison-cell comparison-empty"></div>
               <div class="comparison-cell comparison-head comparison-head-brand">
                 <img src="datalloy-icon.png" alt="" aria-hidden="true" class="brand-icon brand-icon-sm" />
-                <span data-i18n="comparisonHeadSynth">Datalloy.ai</span>
+                <span data-i18n="comparisonHeadSynth">数据合金</span>
               </div>
-              <div class="comparison-cell comparison-head" data-i18n="comparisonHeadAnon">Anonymized data</div>
-              <div class="comparison-cell comparison-head" data-i18n="comparisonHeadEncrypted">Encrypted data</div>
-              <div class="comparison-cell comparison-head" data-i18n="comparisonHeadLlm">General-purpose LLMs</div>
+              <div class="comparison-cell comparison-head" data-i18n="comparisonHeadAnon">脱敏数据</div>
+              <div class="comparison-cell comparison-head" data-i18n="comparisonHeadEncrypted">加密数据</div>
+              <div class="comparison-cell comparison-head" data-i18n="comparisonHeadLlm">通用大模型（LLM）</div>
 
-              <div class="comparison-cell comparison-label" data-i18n="comparisonRow1">Raw data completeness</div>
+              <div class="comparison-cell comparison-label" data-i18n="comparisonRow1">原始数据完整性</div>
               <div class="comparison-cell">
-                <span class="comparison-chip good" data-i18n="comparisonRow1Synth">Full records</span>
+                <span class="comparison-chip good" data-i18n="comparisonRow1Synth">完整记录</span>
               </div>
               <div class="comparison-cell">
-                <span class="comparison-chip low" data-i18n="comparisonRow1Anon">Low</span>
+                <span class="comparison-chip low" data-i18n="comparisonRow1Anon">低</span>
               </div>
               <div class="comparison-cell">
-                <span class="comparison-chip mid" data-i18n="comparisonRow1Encrypted">Partial</span>
+                <span class="comparison-chip mid" data-i18n="comparisonRow1Encrypted">部分</span>
               </div>
               <div class="comparison-cell">
-                <span class="comparison-chip mid" data-i18n="comparisonRow1Llm">Partial</span>
-              </div>
-
-              <div class="comparison-cell comparison-label" data-i18n="comparisonRow2">Rare-event control</div>
-              <div class="comparison-cell">
-                <span class="comparison-chip good" data-i18n="comparisonRow2Synth">High</span>
-              </div>
-              <div class="comparison-cell">
-                <span class="comparison-chip low" data-i18n="comparisonRow2Anon">Low</span>
-              </div>
-              <div class="comparison-cell">
-                <span class="comparison-chip low" data-i18n="comparisonRow2Encrypted">Low</span>
-              </div>
-              <div class="comparison-cell">
-                <span class="comparison-chip mid" data-i18n="comparisonRow2Llm">Medium</span>
+                <span class="comparison-chip mid" data-i18n="comparisonRow1Llm">部分</span>
               </div>
 
-              <div class="comparison-cell comparison-label" data-i18n="comparisonRow3">Compliance risk</div>
+              <div class="comparison-cell comparison-label" data-i18n="comparisonRow2">稀有事件可控性</div>
               <div class="comparison-cell">
-                <span class="comparison-chip good" data-i18n="comparisonRow3Synth">Low</span>
+                <span class="comparison-chip good" data-i18n="comparisonRow2Synth">高</span>
               </div>
               <div class="comparison-cell">
-                <span class="comparison-chip mid" data-i18n="comparisonRow3Anon">Medium</span>
+                <span class="comparison-chip low" data-i18n="comparisonRow2Anon">低</span>
               </div>
               <div class="comparison-cell">
-                <span class="comparison-chip good" data-i18n="comparisonRow3Encrypted">Low</span>
+                <span class="comparison-chip low" data-i18n="comparisonRow2Encrypted">低</span>
               </div>
               <div class="comparison-cell">
-                <span class="comparison-chip low" data-i18n="comparisonRow3Llm">High</span>
-              </div>
-
-              <div class="comparison-cell comparison-label" data-i18n="comparisonRow4">Usable directly in standard tools</div>
-              <div class="comparison-cell">
-                <span class="comparison-chip good" data-i18n="comparisonRow4Synth">Yes</span>
-              </div>
-              <div class="comparison-cell">
-                <span class="comparison-chip good" data-i18n="comparisonRow4Anon">Yes</span>
-              </div>
-              <div class="comparison-cell">
-                <span class="comparison-chip mid" data-i18n="comparisonRow4Encrypted">Partial</span>
-              </div>
-              <div class="comparison-cell">
-                <span class="comparison-chip mid" data-i18n="comparisonRow4Llm">Partial</span>
+                <span class="comparison-chip mid" data-i18n="comparisonRow2Llm">中</span>
               </div>
 
-              <div class="comparison-cell comparison-label" data-i18n="comparisonRow5">Cost</div>
+              <div class="comparison-cell comparison-label" data-i18n="comparisonRow3">合规风险</div>
               <div class="comparison-cell">
-                <span class="comparison-chip good" data-i18n="comparisonRow5Synth">Low</span>
+                <span class="comparison-chip good" data-i18n="comparisonRow3Synth">低</span>
               </div>
               <div class="comparison-cell">
-                <span class="comparison-chip mid" data-i18n="comparisonRow5Anon">Medium</span>
+                <span class="comparison-chip mid" data-i18n="comparisonRow3Anon">中</span>
               </div>
               <div class="comparison-cell">
-                <span class="comparison-chip low" data-i18n="comparisonRow5Encrypted">High</span>
+                <span class="comparison-chip good" data-i18n="comparisonRow3Encrypted">低</span>
               </div>
               <div class="comparison-cell">
-                <span class="comparison-chip low" data-i18n="comparisonRow5Llm">High</span>
+                <span class="comparison-chip low" data-i18n="comparisonRow3Llm">高</span>
+              </div>
+
+              <div class="comparison-cell comparison-label" data-i18n="comparisonRow4">标准工具直接可用</div>
+              <div class="comparison-cell">
+                <span class="comparison-chip good" data-i18n="comparisonRow4Synth">是</span>
+              </div>
+              <div class="comparison-cell">
+                <span class="comparison-chip good" data-i18n="comparisonRow4Anon">是</span>
+              </div>
+              <div class="comparison-cell">
+                <span class="comparison-chip mid" data-i18n="comparisonRow4Encrypted">部分</span>
+              </div>
+              <div class="comparison-cell">
+                <span class="comparison-chip mid" data-i18n="comparisonRow4Llm">部分</span>
+              </div>
+
+              <div class="comparison-cell comparison-label" data-i18n="comparisonRow5">成本</div>
+              <div class="comparison-cell">
+                <span class="comparison-chip good" data-i18n="comparisonRow5Synth">低</span>
+              </div>
+              <div class="comparison-cell">
+                <span class="comparison-chip mid" data-i18n="comparisonRow5Anon">中</span>
+              </div>
+              <div class="comparison-cell">
+                <span class="comparison-chip low" data-i18n="comparisonRow5Encrypted">高</span>
+              </div>
+              <div class="comparison-cell">
+                <span class="comparison-chip low" data-i18n="comparisonRow5Llm">高</span>
               </div>
             </div>
           </div>
-          <p class="comparison-note" data-i18n="comparisonNote">Assessment reflects typical enterprise deployments.</p>
+          <p class="comparison-note" data-i18n="comparisonNote">
+            评估基于典型企业部署场景。
+          </p>
         </section>
 
-        <section class="timeline">
+        <section id="choose" class="choose">
           <div class="section-head">
-            <h2 data-i18n="timelineTitle">Why teams choose Datalloy.ai</h2>
-            <p data-i18n="timelineBody">We build domain-specific raw-data generation systems, not generic feature-only simulators.</p>
+            <h2 data-i18n="chooseTitle">为什么团队选择Datalloy.ai</h2>
+            <p data-i18n="chooseBody">我们构建的是领域专用的原始数据生成系统，而非只做特征拟合的通用造数工具。</p>
           </div>
-          <div class="timeline-steps">
-            <div>
-              <span>01</span>
-              <h4 data-i18n="timeline1Title">Model schema + protocol constraints</h4>
-              <p data-i18n="timeline1Body">Encode schema, protocol, and system constraints directly into the generation pipeline.</p>
-            </div>
-            <div>
-              <span>02</span>
-              <h4 data-i18n="timeline2Title">Synthesize at scale</h4>
-              <p data-i18n="timeline2Body">Generate massive raw data volumes, including statistically rare edge cases.</p>
-            </div>
-            <div>
-              <span>03</span>
-              <h4 data-i18n="timeline3Title">Validate with clients</h4>
-              <p data-i18n="timeline3Body">Partner with early adopters to benchmark real-world effectiveness.</p>
-            </div>
+          <div class="choose-grid">
+            <article class="choose-card">
+              <span class="choose-index">01</span>
+              <h3 data-i18n="chooseCard1Title">建模模式与协议约束</h3>
+              <p data-i18n="chooseCard1Body">将模式、协议与系统约束直接融入生成流程。</p>
+            </article>
+            <article class="choose-card">
+              <span class="choose-index">02</span>
+              <h3 data-i18n="chooseCard2Title">规模化合成</h3>
+              <p data-i18n="chooseCard2Body">高效生成海量原始数据并覆盖统计稀有边缘事件。</p>
+            </article>
+            <article class="choose-card">
+              <span class="choose-index">03</span>
+              <h3 data-i18n="chooseCard3Title">客户共创验证</h3>
+              <p data-i18n="chooseCard3Body">与早期伙伴联合评测真实效果。</p>
+            </article>
           </div>
         </section>
 
         <section id="team" class="team">
           <div class="section-head">
-            <h2 data-i18n="teamTitle">Research-grade team, product-grade delivery</h2>
+            <h2 data-i18n="teamTitle">Team depth and execution plan</h2>
             <p data-i18n-html="teamBody">
               <a href="https://www.shinan.info" target="_blank" rel="noopener noreferrer">Shinan Liu</a> is a tenure-track
               Assistant Professor and PhD advisor in the Department of Data and Systems Engineering at The University of Hong
               Kong, and leads the
               <a href="https://naisslab.github.io" target="_blank" rel="noopener noreferrer">Networked AI Systems and Security (NAISS) Lab</a>.
             </p>
+            <a
+              class="team-join-btn"
+              href="mailto:shinan6@hku.hk?subject=Datalloy%20Join%20Us"
+              data-i18n="teamJoinCta"
+              >Join us</a>
           </div>
           <div class="team-grid">
-            <div class="team-card">
+            <div class="team-card founder-extended">
               <div class="card-icon">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 4a4 4 0 110 8 4 4 0 010-8z" fill="none" stroke="currentColor" stroke-width="1.8" />
@@ -463,10 +663,9 @@
                 </svg>
               </div>
               <h3 data-i18n="founderName">Shinan Liu</h3>
-              <p data-i18n="founderTitle">Assistant Professor, The University of Hong Kong</p>
+              <p data-i18n="founderTitle">Founder and CEO</p>
               <p data-i18n="founderBody">
-                Published at USENIX Security, NSDI, SIGMETRICS, CoNEXT, UbiComp; focused on high-fidelity synthetic operational
-                data.
+                芝加哥大学计算机科学博士（师从 Nick Feamster），聚焦多模态运营数据建模、网络安全与生成系统工程化，覆盖表格、时序、系统日志与网络流量，强调协议一致性、可解释控制与标准工具可集成。获机器学习与系统领域新星奖、CBI奖学金、ACTION人工智能奖学金、Daniels奖学金，研究成果被福布斯、华尔街日报与 ACM TechNews 报道。
               </p>
             </div>
             <div class="team-card">
@@ -476,12 +675,9 @@
                   <path d="M8 10h8M8 14h5" fill="none" stroke="currentColor" stroke-width="1.8" />
                 </svg>
               </div>
-              <h3 data-i18n="teamFocusTitle">Core expertise & honors</h3>
+              <h3 data-i18n="teamFocusTitle">Current team coverage</h3>
               <p data-i18n="teamFocusBody">
-                Core strengths span multimodal operational data modeling, cybersecurity, and production-grade generative systems
-                across tabular, time-series, logs, and traffic with protocol fidelity and tool-ready integration. Recipient of
-                Rising Star in ML & Systems, CBI Fellowship, ACTION AI Fellowship, and Daniels Fellowship. Research has been
-                featured by Forbes, The Wall Street Journal, and ACM TechNews.
+                No full-time company employees yet. The NAISS lab has 15 members, and 13 currently work on compliant synthetic-data generation projects.
               </p>
             </div>
             <div class="team-card">
@@ -491,38 +687,111 @@
                   <path d="M4 20h16" fill="none" stroke="currentColor" stroke-width="1.8" />
                 </svg>
               </div>
-              <h3 data-i18n="teamProgressTitle">Go-to-market</h3>
+              <h3 data-i18n="teamProgressTitle">Hiring priorities (next 2 quarters)</h3>
               <p data-i18n="teamProgressBody">
-                Pilot programs are underway with telecom, security, and automotive partners, covering protocol mapping, scenario
-                design, data validation, and model evaluation to accelerate production deployment. We work jointly with customer
-                teams from PoC definition to integration into existing SIEM/IDS/ML workflows, with clear milestones on quality,
-                compliance, and deployment readiness. Previous projects have been deployed at organizations including Verizon and
-                NetMicroscope.
+                Current allocation: 5 contributors at full-time intensity (PI + 1 postdoc + 2 PhD + 1 MS, ~40 hours/week each); remaining contributors support at >=10 hours/week. Planned next hires: operations/management and product engineers.
+              </p>
+            </div>
+            <div class="team-card">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 17l4-4 3 3 6-7" fill="none" stroke="currentColor" stroke-width="1.8" />
+                  <path d="M4 20h16" fill="none" stroke="currentColor" stroke-width="1.8" />
+                </svg>
+              </div>
+              <h3 data-i18n="teamAdvisorsTitle">Advisors and collaborators</h3>
+              <p data-i18n="teamAdvisorsBody">
+                Contributor mix spans postdoc, PhD, MPhil, MS, and undergrad tracks from HIT, ZJU, THU, SYSU, UESTC, BU,
+                USTC, UToronto, CMU, Tongji, HKU, and RUC.
+              </p>
+            </div>
+            <div class="team-card">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 20h16M7 20V9h3v11M11 20V6h3v14M15 20V11h3v9" fill="none" stroke="currentColor" stroke-width="1.8" />
+                </svg>
+              </div>
+              <h3 data-i18n="teamAdvisorBoardTitle">Senior advisory professors</h3>
+              <p data-i18n="teamAdvisorBoardBody">
+                Senior advisory support includes professors from University of Chicago, CMU, UCSB, and Tsinghua University,
+                together with business advisors from Verizon, NetMicroscope, Conviva, and Alibaba.
               </p>
             </div>
           </div>
         </section>
 
+        <!--
+        <section class="evidence">
+          <div class="section-head">
+            <h2 data-i18n="evidenceTitle">Evidence and references</h2>
+            <p data-i18n="evidenceBody">Verifiable links for publications, talks, and technical background.</p>
+          </div>
+          <div class="evidence-grid">
+            <a href="https://naisslab.github.io/" target="_blank" rel="noopener noreferrer" class="evidence-link" data-i18n="evidenceLink1">NAISS Lab homepage</a>
+            <a href="https://dl.acm.org/doi/10.1145/3639037" target="_blank" rel="noopener noreferrer" class="evidence-link" data-i18n="evidenceLink2">NetDiffusion (SIGMETRICS'24)</a>
+            <a href="https://arxiv.org/abs/2503.22663" target="_blank" rel="noopener noreferrer" class="evidence-link" data-i18n="evidenceLink3">NetSSM (CoNEXT'26)</a>
+            <a href="https://arxiv.org/pdf/2503.03022" target="_blank" rel="noopener noreferrer" class="evidence-link" data-i18n="evidenceLink4">Generative Active Adaptation</a>
+            <a href="https://github.com/noise-lab/NetDiffusion" target="_blank" rel="noopener noreferrer" class="evidence-link" data-i18n="evidenceLink5">NetDiffusion GitHub</a>
+            <a href="https://github.com/noise-lab/netssm" target="_blank" rel="noopener noreferrer" class="evidence-link" data-i18n="evidenceLink6">NetSSM GitHub</a>
+          </div>
+        </section>
+        -->
+
         <section id="contact" class="contact">
-          <div>
-            <h2 data-i18n="contactTitle">Start with your rarest data problems.</h2>
+          <div class="contact-content">
+            <p class="contact-kicker" data-i18n="contactKicker">Enterprise pilot intake</p>
+            <h2 data-i18n="contactTitle">Start with your most critical data scenario.</h2>
             <p data-i18n="contactBody">
-              We are onboarding pilot partners in cybersecurity, autonomous systems, and IoT. Share your use case across
-              tabular, time-series, logs, or traffic data and we will design a synthetic data plan in days, not quarters.
+              Share your use case and we will follow up with a focused deployment and validation path for your team.
             </p>
+            <a
+              class="schedule-link"
+              href="mailto:shinan6@hku.hk?subject=Datalloy%2030-minute%20intro%20call"
+              data-i18n="contactSchedule"
+              >Schedule a 30-minute intro call</a>
           </div>
           <form
             class="contact-form"
-            action="mailto:shinan6@hku.hk"
+            action="https://formsubmit.co/ajax/shinan6@hku.hk"
             method="post"
-            enctype="text/plain"
+            enctype="multipart/form-data"
           >
+            <input type="hidden" name="_subject" value="Datalloy demo request" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="source_page" id="source-page" value="" />
+            <input type="hidden" name="submitted_at_utc" id="submitted-at" value="" />
+            <input type="hidden" name="lang" id="form-lang" value="" />
+            <input type="hidden" name="utm_source" id="utm-source" value="" />
+            <input type="hidden" name="utm_medium" id="utm-medium" value="" />
+            <input type="hidden" name="utm_campaign" id="utm-campaign" value="" />
+            <input type="hidden" name="referrer" id="referrer" value="" />
             <input type="text" name="name" placeholder="Name" data-i18n-placeholder="contactName" />
             <input type="email" name="email" placeholder="Work email" data-i18n-placeholder="contactEmail" />
             <input type="text" name="company" placeholder="Company" data-i18n-placeholder="contactCompany" />
+            <input type="text" name="role" placeholder="Role / team" data-i18n-placeholder="contactRole" />
+            <select name="data_type">
+              <option value="" selected data-i18n="contactDataTypeDefault">Primary data type</option>
+              <option value="pcap" data-i18n="contactDataType1">PCAP / network traffic</option>
+              <option value="logs" data-i18n="contactDataType2">System logs / traces</option>
+              <option value="timeseries" data-i18n="contactDataType3">Time-series telemetry</option>
+              <option value="tabular" data-i18n="contactDataType4">Tabular records</option>
+            </select>
+            <select name="deployment_preference">
+              <option value="" selected data-i18n="contactDeployDefault">Deployment preference</option>
+              <option value="saas" data-i18n="contactDeploy1">Managed SaaS</option>
+              <option value="vpc" data-i18n="contactDeploy2">Customer VPC</option>
+              <option value="onprem" data-i18n="contactDeploy3">On-prem</option>
+            </select>
+            <select name="timeline">
+              <option value="" selected data-i18n="contactTimelineDefault">Target timeline</option>
+              <option value="0-1m" data-i18n="contactTimeline1">0-1 month</option>
+              <option value="1-3m" data-i18n="contactTimeline2">1-3 months</option>
+              <option value="3m+" data-i18n="contactTimeline3">3+ months</option>
+            </select>
             <textarea name="message" rows="4" placeholder="Tell us about your data needs" data-i18n-placeholder="contactMessage"></textarea>
             <button type="submit" data-i18n="contactButton">Request demo</button>
-            <p class="note" data-i18n="contactNote">We respond within 48 hours. NDA-ready.</p>
+            <p class="form-status" role="status" aria-live="polite"></p>
           </form>
         </section>
       </main>
