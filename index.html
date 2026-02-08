@@ -746,7 +746,9 @@ risk_score:float  alert_label:int  geo_region:string</code></pre>
             </p>
             <a
               class="schedule-link"
-              href="mailto:shinan6@hku.hk?subject=Datalloy%2030-minute%20intro%20call"
+              href="https://calendly.com/liushinan63/chat-with-shinan"
+              target="_blank"
+              rel="noopener noreferrer"
               data-i18n="contactSchedule"
               >Schedule a 30-minute intro call</a>
           </div>
@@ -759,6 +761,7 @@ risk_score:float  alert_label:int  geo_region:string</code></pre>
             <input type="hidden" name="_subject" value="Datalloy demo request" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" id="form-next" value="" />
             <input type="hidden" name="source_page" id="source-page" value="" />
             <input type="hidden" name="submitted_at_utc" id="submitted-at" value="" />
             <input type="hidden" name="lang" id="form-lang" value="" />
@@ -776,12 +779,14 @@ risk_score:float  alert_label:int  geo_region:string</code></pre>
               <option value="logs" data-i18n="contactDataType2">System logs / traces</option>
               <option value="timeseries" data-i18n="contactDataType3">Time-series telemetry</option>
               <option value="tabular" data-i18n="contactDataType4">Tabular records</option>
+              <option value="other" data-i18n="contactDataType5">Other</option>
             </select>
             <select name="deployment_preference">
               <option value="" selected data-i18n="contactDeployDefault">Deployment preference</option>
               <option value="saas" data-i18n="contactDeploy1">Managed SaaS</option>
               <option value="vpc" data-i18n="contactDeploy2">Customer VPC</option>
               <option value="onprem" data-i18n="contactDeploy3">On-prem</option>
+              <option value="other" data-i18n="contactDeploy4">Other</option>
             </select>
             <select name="timeline">
               <option value="" selected data-i18n="contactTimelineDefault">Target timeline</option>

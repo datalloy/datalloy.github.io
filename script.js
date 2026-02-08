@@ -299,10 +299,12 @@ const dictionary = {
     contactDataType2: "System logs / traces",
     contactDataType3: "Time-series telemetry",
     contactDataType4: "Tabular records",
+    contactDataType5: "Other",
     contactDeployDefault: "Deployment preference",
     contactDeploy1: "Managed SaaS",
     contactDeploy2: "Customer VPC",
     contactDeploy3: "On-prem",
+    contactDeploy4: "Other",
     contactTimelineDefault: "Target timeline",
     contactTimeline1: "0-1 month",
     contactTimeline2: "1-3 months",
@@ -597,10 +599,12 @@ const dictionary = {
     contactDataType2: "系统日志 / Trace",
     contactDataType3: "时序遥测",
     contactDataType4: "表格记录",
+    contactDataType5: "其他",
     contactDeployDefault: "部署偏好",
     contactDeploy1: "托管 SaaS",
     contactDeploy2: "客户 VPC",
     contactDeploy3: "本地部署",
+    contactDeploy4: "其他",
     contactTimelineDefault: "目标时间",
     contactTimeline1: "0-1 个月",
     contactTimeline2: "1-3 个月",
@@ -622,6 +626,7 @@ const formStatus = document.querySelector(".form-status");
 const sourceField = document.getElementById("source-page");
 const submittedAtField = document.getElementById("submitted-at");
 const formLangField = document.getElementById("form-lang");
+const formNextField = document.getElementById("form-next");
 const utmSourceField = document.getElementById("utm-source");
 const utmMediumField = document.getElementById("utm-medium");
 const utmCampaignField = document.getElementById("utm-campaign");
@@ -670,6 +675,16 @@ function setLanguage(lang) {
   });
 
   document.documentElement.lang = lang === "zh" ? "zh-Hans" : "en";
+
+  if (formNextField) {
+    formNextField.value = buildThankYouUrl(currentLang);
+  }
+}
+
+function buildThankYouUrl(lang) {
+  const url = new URL("thank-you.html", window.location.href);
+  url.searchParams.set("lang", lang);
+  return url.toString();
 }
 
 function stampFormMetadata() {
@@ -677,6 +692,7 @@ function stampFormMetadata() {
   if (sourceField) sourceField.value = window.location.href;
   if (submittedAtField) submittedAtField.value = new Date().toISOString();
   if (formLangField) formLangField.value = currentLang;
+  if (formNextField) formNextField.value = buildThankYouUrl(currentLang);
   if (utmSourceField) utmSourceField.value = params.get("utm_source") || "";
   if (utmMediumField) utmMediumField.value = params.get("utm_medium") || "";
   if (utmCampaignField) utmCampaignField.value = params.get("utm_campaign") || "";
@@ -725,6 +741,10 @@ if (contactForm) {
         formStatus.textContent = t("contactStatusSuccess");
         formStatus.dataset.state = "success";
       }
+
+      window.setTimeout(() => {
+        window.location.href = buildThankYouUrl(currentLang);
+      }, 220);
     } catch (error) {
       if (formStatus) {
         formStatus.textContent = t("contactStatusError");

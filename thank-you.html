@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Datalloy.ai | Thank You</title>
+    <meta name="description" content="Thank you for contacting Datalloy.ai." />
+    <link rel="icon" type="image/png" href="datalloy-icon.png" />
+    <link rel="apple-touch-icon" href="datalloy-icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="thanks-page">
+    <div class="page">
+      <main class="thanks-main">
+        <section class="thanks-card">
+          <div class="thanks-top">
+            <div class="logo">
+              <img src="datalloy-icon.png" alt="" aria-hidden="true" class="brand-icon" />
+              <span class="logo-text">Datalloy.ai</span>
+            </div>
+            <div class="thanks-lang" role="group" aria-label="Language">
+              <button class="thanks-lang-btn" data-lang="en" type="button">EN</button>
+              <button class="thanks-lang-btn active" data-lang="zh" type="button">中文</button>
+            </div>
+          </div>
+          <p class="eyebrow" data-i18n="eyebrow">预约请求已提交</p>
+          <h1 data-i18n="title">感谢提交，我们会尽快联系你。</h1>
+          <p class="subhead thanks-copy" data-i18n="body">
+            我们已收到你的信息。通常会在 48 小时内通过邮件回复；你也可以直接预约 30 分钟沟通。
+          </p>
+          <div class="thanks-actions">
+            <a class="primary" href="./" data-i18n="home">返回首页</a>
+            <a
+              class="secondary"
+              href="https://calendly.com/liushinan63/chat-with-shinan"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-i18n="schedule"
+              >预约 30 分钟会议</a
+            >
+          </div>
+          <label class="thanks-autoback-control">
+            <input id="autoback-toggle" type="checkbox" />
+            <span data-i18n="autoBackLabel">5 秒后自动返回首页</span>
+          </label>
+          <p class="thanks-autoback-status" id="autoback-status" aria-live="polite"></p>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const AUTO_BACK_SECONDS = 5;
+      const copy = {
+        en: {
+          eyebrow: "Request received",
+          title: "Thanks for your submission. We will follow up soon.",
+          body: "We received your request. We usually reply by email within 48 hours. You can also schedule a 30-minute call directly.",
+          home: "Back to homepage",
+          schedule: "Book a 30-minute call",
+          autoBackLabel: "Auto-return to homepage in 5 seconds",
+          autoBackOff: "Auto-return is off."
+        },
+        zh: {
+          eyebrow: "预约请求已提交",
+          title: "感谢提交，我们会尽快联系你。",
+          body: "我们已收到你的信息。通常会在 48 小时内通过邮件回复；你也可以直接预约 30 分钟沟通。",
+          home: "返回首页",
+          schedule: "预约 30 分钟会议",
+          autoBackLabel: "5 秒后自动返回首页",
+          autoBackOff: "自动返回已关闭。"
+        }
+      };
+
+      const nodes = document.querySelectorAll("[data-i18n]");
+      const langButtons = document.querySelectorAll(".thanks-lang-btn");
+      const autoBackToggle = document.getElementById("autoback-toggle");
+      const autoBackStatus = document.getElementById("autoback-status");
+      const query = new URLSearchParams(window.location.search);
+
+      let currentLang = "zh";
+      let autoBackTimer = null;
+      let autoBackRemain = AUTO_BACK_SECONDS;
+
+      function normalizeLang(value) {
+        return value === "en" ? "en" : "zh";
+      }
+
+      function renderAutoBackStatus() {
+        if (!autoBackStatus) return;
+        if (!autoBackToggle || !autoBackToggle.checked) {
+          autoBackStatus.textContent = copy[currentLang].autoBackOff;
+          return;
+        }
+        if (currentLang === "en") {
+          autoBackStatus.textContent = `Returning to homepage in ${autoBackRemain}s...`;
+        } else {
+          autoBackStatus.textContent = `${autoBackRemain} 秒后自动返回首页...`;
+        }
+      }
+
+      function stopAutoBack() {
+        if (autoBackTimer) {
+          window.clearInterval(autoBackTimer);
+          autoBackTimer = null;
+        }
+        autoBackRemain = AUTO_BACK_SECONDS;
+        renderAutoBackStatus();
+      }
+
+      function startAutoBack() {
+        if (!autoBackToggle || !autoBackToggle.checked) {
+          stopAutoBack();
+          return;
+        }
+        stopAutoBack();
+        renderAutoBackStatus();
+        autoBackTimer = window.setInterval(() => {
+          autoBackRemain -= 1;
+          if (autoBackRemain <= 0) {
+            window.clearInterval(autoBackTimer);
+            autoBackTimer = null;
+            window.location.href = "./";
+            return;
+          }
+          renderAutoBackStatus();
+        }, 1000);
+      }
+
+      function applyLang(lang) {
+        currentLang = lang;
+        const strings = copy[lang];
+        nodes.forEach((node) => {
+          const key = node.getAttribute("data-i18n");
+          if (strings[key]) {
+            node.textContent = strings[key];
+          }
+        });
+        langButtons.forEach((btn) => {
+          btn.classList.toggle("active", btn.dataset.lang === lang);
+        });
+        document.documentElement.lang = lang === "zh" ? "zh-Hans" : "en";
+        renderAutoBackStatus();
+      }
+
+      const initialLang = normalizeLang(query.get("lang"));
+      const autoBackEnabled = query.get("autoback") !== "0";
+
+      if (autoBackToggle) {
+        autoBackToggle.checked = autoBackEnabled;
+      }
+
+      applyLang(initialLang);
+      if (autoBackEnabled) {
+        startAutoBack();
+      }
+
+      langButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const nextLang = normalizeLang(btn.dataset.lang);
+          query.set("lang", nextLang);
+          if (autoBackToggle && autoBackToggle.checked) {
+            query.delete("autoback");
+          } else {
+            query.set("autoback", "0");
+          }
+          const nextUrl = `${window.location.pathname}?${query.toString()}`;
+          window.history.replaceState({}, "", nextUrl);
+          applyLang(nextLang);
+        });
+      });
+
+      if (autoBackToggle) {
+        autoBackToggle.addEventListener("change", () => {
+          if (autoBackToggle.checked) {
+            query.delete("autoback");
+            startAutoBack();
+          } else {
+            query.set("autoback", "0");
+            stopAutoBack();
+          }
+          const nextUrl = `${window.location.pathname}?${query.toString()}`;
+          window.history.replaceState({}, "", nextUrl);
+        });
+      }
+    </script>
+  </body>
+</html>

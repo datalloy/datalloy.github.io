@@ -1932,6 +1932,117 @@ html[lang="en"] .solution-pillar p {
   color: #166f52;
 }
 
+.thanks-main {
+  min-height: calc(100vh - 120px);
+  display: grid;
+  align-items: center;
+}
+
+.thanks-card {
+  width: min(860px, 100%);
+  padding: 42px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--line);
+  background: linear-gradient(148deg, rgba(255, 255, 255, 0.93), rgba(243, 248, 255, 0.8));
+  box-shadow: var(--shadow-md);
+}
+
+.thanks-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.thanks-lang {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.thanks-lang-btn {
+  border: 0;
+  background: transparent;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--ink-mute);
+  cursor: pointer;
+}
+
+.thanks-lang-btn.active {
+  color: #fff;
+  background: linear-gradient(130deg, #183155, #2a5477);
+}
+
+.thanks-card h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin-bottom: 14px;
+}
+
+.thanks-copy {
+  max-width: 680px;
+}
+
+.thanks-actions {
+  margin-top: 26px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.thanks-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.thanks-actions .primary {
+  color: #fff;
+  background: linear-gradient(140deg, #1a3960, #236d82 52%, #1799a5);
+  box-shadow: 0 15px 30px rgba(26, 57, 96, 0.3);
+}
+
+.thanks-actions .secondary {
+  color: #173050;
+  border: 1px solid rgba(23, 48, 80, 0.28);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.thanks-actions a:hover {
+  transform: translateY(-2px);
+}
+
+.thanks-autoback-control {
+  margin-top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+  color: #3e536d;
+}
+
+.thanks-autoback-control input {
+  width: 16px;
+  height: 16px;
+  accent-color: #1e5376;
+}
+
+.thanks-autoback-status {
+  margin-top: 8px;
+  font-size: 0.88rem;
+  color: #5a6e86;
+}
+
 .footer {
   margin-top: 74px;
   padding: 22px 0 8px;
@@ -1975,7 +2086,9 @@ html[lang="en"] .solution-pillar p {
 .contact-form select:focus-visible,
 .contact-form textarea:focus-visible,
 .schedule-link:focus-visible,
-.team-join-btn:focus-visible {
+.team-join-btn:focus-visible,
+.thanks-actions a:focus-visible,
+.thanks-lang-btn:focus-visible {
   outline: 2px solid rgba(26, 153, 165, 0.72);
   outline-offset: 2px;
 }
@@ -2430,6 +2543,31 @@ html[lang="en"] .solution-pillar p {
   .team-card.founder-extended {
     grid-column: span 1;
   }
+
+  .thanks-main {
+    min-height: calc(100vh - 90px);
+  }
+
+  .thanks-card {
+    padding: 30px 22px;
+  }
+
+  .thanks-top {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .thanks-actions {
+    flex-direction: column;
+  }
+
+  .thanks-actions a {
+    width: 100%;
+  }
+
+  .thanks-autoback-control {
+    margin-top: 14px;
+  }
 }
 
 @media (max-width: 560px) {
@@ -2511,6 +2649,14 @@ html[lang="en"] .solution-pillar p {
   .contact-form button {
     width: 100%;
     justify-self: stretch;
+  }
+
+  .thanks-card {
+    padding: 26px 18px;
+  }
+
+  .thanks-lang-btn {
+    padding: 6px 10px;
   }
 
   .footer {
